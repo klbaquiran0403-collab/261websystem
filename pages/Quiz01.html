@@ -3,199 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz 01 - Matched X Size and Alignment</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        table {
-            border-collapse: collapse;
-            margin: 20px auto; /* Centered with top/bottom margin */
-            table-layout: fixed; /* Ensures rigid alignment */
-            width: fit-content;
-        }
-        td {
-            border: 1px solid black;
-            width: 50px; /* Specific cell width for consistency */
-            height: 50px; /* Specific cell height for consistency */
-            text-align: center;
-            vertical-align: middle;
-            font-size: 1.2em; /* Basic font size for cells */
-        }
-        /* Specific styles for matched X sizes */
-        .big-x {
-            font-size: 2.5em; /* Large X */
-            font-weight: bold;
-        }
-        .small-x {
-            font-size: 0.8em; /* Small X */
-            vertical-align: super; /* Aligned like a superscript */
-        }
-        /* Style for headers */
-        h1, h2 {
-            margin: 0;
-            padding: 0;
-            display: inline;
-        }
-    </style>
+    <title>Quiz 01</title>
 </head>
 <body>
 
-    <table border="0" cellpadding="10" style="margin: 0 auto; width: auto;">
+    <table border="0" cellpadding="10">
         
         <tr>
-            <td>
-                <table border="1">
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
                     <tr>
-                        <td colspan="3"><span class="small-x">X</span> <span class="small-x">X</span> <span class="small-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td colspan="3"><span class="big-x">X</span> <span class="big-x">X</span> <span class="big-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td colspan="3"><span class="small-x">X</span> <span class="small-x">X</span> <span class="small-x">X</span></td>
-                    </tr>
-                </table>
-            </td>
-
-            <td>
-                <table border="1">
-                    <tr>
-                        <td colspan="2"><span class="big-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td colspan="2"><span class="big-x">X</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="big-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                 </table>
             </td>
 
-            <td>
-                <table border="1">
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
                     <tr>
-                        <td colspan="3"><span class="big-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td rowspan="2"><span class="big-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td rowspan="2" width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <table border="1">
-                    <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td rowspan="2"><span class="big-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><span class="small-x">X</span> <span class="small-x">X</span> <span class="small-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                 </table>
             </td>
 
-            <td>
-                <table border="1">
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
                     <tr>
-                        <td><span class="big-x">X</span></td>
-                        <td colspan="2"><span class="big-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><span class="big-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
+                        <td colspan="2" width="100" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td><span class="big-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="big-x">X</span></td>
-                    </tr>
-                </table>
-            </td>
-
-            <td>
-                <table border="1">
-                    <tr>
-                        <td colspan="2"><span class="small-x">X</span></td>
-                        <td><span class="big-x">X</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="big-x">X</span></td>
-                        <td rowspan="2"><span class="small-x">X</span> <span class="small-x">X</span> <span class="small-x">X</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="big-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                 </table>
             </td>
         </tr>
 
         <tr>
-            <td>
-                <table border="1">
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
                     <tr>
-                        <td colspan="3"><span class="big-x">X</span></td>
+                        <td colspan="2" width="100" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td colspan="3"><span class="big-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="big-x">X</span></td>
-                    </tr>
-                </table>
-            </td>
-
-            <td>
-                <table border="1">
-                    <tr>
-                        <td colspan="2"><span class="small-x">X</span></td>
-                        <td><span class="big-x">X</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td colspan="2"><span class="small-x">X</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                 </table>
             </td>
 
-            <td>
-                <table border="1">
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
                     <tr>
-                        <td><span class="big-x">X</span></td>
-                        <td colspan="2"><span class="big-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td colspan="2" width="100" align="center">X</td>
                     </tr>
                     <tr>
-                        <td colspan="3"><span class="big-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td rowspan="2" width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
                     </tr>
                     <tr>
-                        <td><span class="big-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
-                        <td><span class="small-x">X</span></td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                </table>
+            </td>
+
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
+                    <tr>
+                        <td colspan="2" width="100" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                    <tr>
+                        <td width="50" align="center">X</td>
+                        <td colspan="2" rowspan="2" width="100" align="center">X</td>
+                    </tr>
+                    <tr>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
+                    <tr>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" width="100" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                    <tr>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                </table>
+            </td>
+
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
+                    <tr>
+                        <td width="50" align="center">X</td>
+                        <td colspan="2" width="100" align="center">X</td>
+                    </tr>
+                    <tr>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                    <tr>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                </table>
+            </td>
+
+            <td valign="top" width="150">
+                <table border="1" cellspacing="0" width="150">
+                    <tr>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                        <td width="50" align="center">X</td>
+                    </tr>
+                    <tr>
+                        <td width="50" align="center">X</td>
+                        <td colspan="2" rowspan="2" width="100" align="center">X</td>
+                    </tr>
+                    <tr>
+                        <td width="50" align="center">X</td>
                     </tr>
                 </table>
             </td>
