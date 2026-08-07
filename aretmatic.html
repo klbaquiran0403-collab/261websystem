@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <h1>My First JavaScript</h1>
+
+    <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click me to Display Date and Time</button>
+
+    <p id="demo"></p>
+
+    <input type="text" id="number1" placeholder="Enter number 1"> <br/>
+    <input type="text" id="number2" placeholder="Enter number 2"> <br/>
+    
+    <!-- DALAWANG BUTTONS -->
+    <button type="button" onclick="getSum()">Click to Display the Sum</button><br/>
+    <button type="button" onclick="calculateAll()">Click to Display All Answers</button><br/>
+
+    <input type="text" id="result" readonly>
+
+</body>
+</html>
+
+<script>
+
+function getSum() 
+{
+    var num1 = parseFloat(document.getElementById("number1").value);
+    var num2 = parseFloat(document.getElementById("number2").value);
+    var sum = num1 + num2;
+    document.getElementById("result").value = "Sum: " + sum;
+}
+function calculateAll() 
+{
+    var num1 = parseFloat(document.getElementById("number1").value);
+    var num2 = parseFloat(document.getElementById("number2").value);
+
+    var sum = num1 + num2;
+    var diff = num1 - num2;
+    var prod = num1 * num2;
+    var quot = num2 !== 0 ? (num1 / num2) : "Cannot divide by 0";
+
+    document.getElementById("result").value = 
+    "Sum: " + sum + " | Diff: " + diff + " | Prod: " + prod + " | Quot: " + quot;
+}
+</script>
