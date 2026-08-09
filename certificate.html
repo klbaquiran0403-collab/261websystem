@@ -2,716 +2,436 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificate of Marriage (Front & Back)</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f0f0f0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .page-container {
-            background-color: #ffffff;
-            width: 850px;
-            border: 2px solid #d9534f;
-            padding: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            color: #d9534f;
-        }
-
-        .page-title-indicator {
-            background: #d9534f;
-            color: white;
-            padding: 5px 15px;
-            font-weight: bold;
-            font-size: 14px;
-            border-radius: 4px;
-            align-self: center;
-        }
-
-        /* HEADER SECTION */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            font-size: 11px;
-            margin-bottom: 5px;
-        }
-
-        .header-title {
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        .header-title h4 { margin: 2px 0; font-size: 13px; font-weight: normal; }
-        .header-title h3 { margin: 2px 0; font-size: 14px; font-weight: bold; }
-        .header-title h2 { margin: 5px 0; font-size: 20px; font-weight: bold; letter-spacing: 1px; }
-
-        /* TOP LOCATION FIELDS */
-        .top-fields {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #d9534f;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-            font-size: 12px;
-        }
-
-        .top-fields .field {
-            display: flex;
-            align-items: flex-end;
-            gap: 5px;
-        }
-
-        /* TABLES & GRID STRUCTURE */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 11px;
-        }
-
-        th, td {
-            border: 1px solid #d9534f;
-            padding: 4px;
-            vertical-align: top;
-        }
-
-        th { text-align: center; font-size: 12px; font-weight: bold; }
-
-        .label-col { width: 25%; }
-        .party-col { width: 37.5%; }
-
-        .input-subfield { margin-bottom: 4px; }
-
-        input[type="text"], 
-        input[type="date"], 
-        input[type="time"], 
-        input[type="number"] {
-            border: none;
-            border-bottom: 1px dotted #d9534f;
-            outline: none;
-            font-size: 11px;
-            color: #000;
-            background: transparent;
-        }
-
-        .full-width { width: 100%; }
-
-        .placeholder-text {
-            font-size: 9px;
-            text-align: center;
-            color: #d9534f;
-            display: block;
-        }
-
-        .flex-row { display: flex; gap: 5px; }
-
-        /* SECTIONS */
-        .section-box {
-            border: 1px solid #d9534f;
-            border-top: none;
-            padding: 5px;
-            font-size: 11px;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            margin: 4px 0;
-            color: #333;
-        }
-
-        .checkbox-item input[type="checkbox"] { margin-top: 2px; }
-
-        /* BOTTOM SIGNATURES & REMARKS */
-        .signatures-grid {
-            display: flex;
-            border: 1px solid #d9534f;
-            border-top: none;
-        }
-
-        .sig-col {
-            flex: 1;
-            padding: 5px;
-            border-right: 1px solid #d9534f;
-        }
-
-        .sig-col:last-child { border-right: none; }
-        .sig-col h5 { margin: 0 0 5px 0; font-size: 10px; }
-
-        .remarks-box {
-            border: 1px solid #d9534f;
-            border-top: none;
-            height: 60px;
-            padding: 5px;
-            font-size: 10px;
-        }
-
-        .office-use {
-            border: 1px solid #d9534f;
-            border-top: none;
-            padding: 5px;
-            font-size: 9px;
-        }
-
-        .office-boxes {
-            display: flex;
-            gap: 10px;
-            margin-top: 5px;
-        }
-
-        .office-box {
-            border: 1px dotted #d9534f;
-            width: 35px;
-            height: 25px;
-        }
-
-        /* BACK PAGE AFFIDAVIT STYLES */
-        .affidavit-title {
-            text-align: center;
-            font-weight: bold;
-            font-size: 14px;
-            margin: 15px 0 10px 0;
-            text-transform: uppercase;
-        }
-
-        .affidavit-text {
-            color: #333;
-            font-size: 11px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        .jurat-block {
-            margin-top: 15px;
-            font-size: 11px;
-            color: #333;
-            line-height: 1.8;
-        }
-
-        .sig-line-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            text-align: center;
-            font-size: 10px;
-        }
-
-        .sig-line-item { flex: 1; padding: 0 10px; }
-
-        .btn-container { text-align: center; margin-top: 20px; }
-        .submit-btn {
-            background-color: #d9534f;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .submit-btn:hover { background-color: #c9302c; }
-    </style>
+    <title>Certificate of Marriage</title>
 </head>
 <body>
 
-<form action="#" method="POST">
+    <form action="#" method="POST">
+        
+        <table border="1" width="100%">
+            <tr>
+                <td colspan="3" align="center">
+                    <p>Municipal Form No. 97 (Revised August 2016)</p>
+                    <p><i>(To be accomplished in quadruplicate using black ink)</i></p>
+                    <h3>Republic of the Philippines</h3>
+                    <h2>OFFICE OF THE CIVIL REGISTRAR GENERAL</h2>
+                    <h1>CERTIFICATE OF MARRIAGE</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="province">Province:</label> 
+                    <input type="text" id="province" name="province">
+                </td>
+                <td>
+                    <label for="city_municipality">City/Municipality:</label> 
+                    <input type="text" id="city_municipality" name="city_municipality">
+                </td>
+                <td>
+                    <label for="registry_no">Registry No.:</label> 
+                    <input type="text" id="registry_no" name="registry_no">
+                </td>
+            </tr>
+        </table>
 
-    <!-- PAGE 1: FRONT PAGE (CERTIFICATE OF MARRIAGE) -->
-    <div class="page-title-indicator">PAGE 1 - CERTIFICATE OF MARRIAGE (FRONT)</div>
-    
-    <div class="page-container">
-        <!-- HEADER -->
-        <div class="header">
-            <div>Municipal Form No. 97<br>(Revised August 2016)</div>
-            <div class="header-title">
-                <h4>Republic of the Philippines</h4>
-                <h3>OFFICE OF THE CIVIL REGISTRAR GENERAL</h3>
-                <h2>CERTIFICATE OF MARRIAGE</h2>
-            </div>
-            <div>(To be accomplished in quadruplicate using black ink)</div>
-        </div>
+        <br>
 
-        <!-- TOP LOCATION -->
-        <div class="top-fields">
-            <div style="flex: 2;">
-                <div class="field" style="margin-bottom: 3px;">
-                    <label>Province</label>
-                    <input type="text" name="province" style="width: 80%;">
-                </div>
-                <div class="field">
-                    <label>City/Municipality</label>
-                    <input type="text" name="city_municipality" style="width: 70%;">
-                </div>
-            </div>
-            <div style="flex: 1; display: flex; align-items: flex-end; justify-content: flex-end;">
-                <div class="field">
-                    <label>Registry No.</label>
-                    <input type="text" name="registry_no" style="width: 120px;">
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTRACTING PARTIES TABLE -->
-        <table>
+        <table border="1" width="100%">
             <thead>
                 <tr>
-                    <th class="label-col"></th>
-                    <th class="party-col">HUSBAND</th>
-                    <th class="party-col">WIFE</th>
+                    <th width="30%">DETAILS</th>
+                    <th width="35%">HUSBAND</th>
+                    <th width="35%">WIFE</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- 1. Name -->
                 <tr>
-                    <td><strong>1. Name of Contracting Parties</strong></td>
+                    <td><b>1. Name of Contracting Parties</b></td>
                     <td>
-                        <div class="input-subfield"><input type="text" name="h_first_name" class="full-width"><span class="placeholder-text">(First)</span></div>
-                        <div class="input-subfield"><input type="text" name="h_middle_name" class="full-width"><span class="placeholder-text">(Middle)</span></div>
-                        <div class="input-subfield"><input type="text" name="h_last_name" class="full-width"><span class="placeholder-text">(Last)</span></div>
+                        <input type="text" name="h_first_name" placeholder="First Name"><br>
+                        <input type="text" name="h_middle_name" placeholder="Middle Name"><br>
+                        <input type="text" name="h_last_name" placeholder="Last Name">
                     </td>
                     <td>
-                        <div class="input-subfield"><input type="text" name="w_first_name" class="full-width"><span class="placeholder-text">(First)</span></div>
-                        <div class="input-subfield"><input type="text" name="w_middle_name" class="full-width"><span class="placeholder-text">(Middle)</span></div>
-                        <div class="input-subfield"><input type="text" name="w_last_name" class="full-width"><span class="placeholder-text">(Last)</span></div>
-                    </td>
-                </tr>
-
-                <!-- 2. Date of Birth / Age -->
-                <tr>
-                    <td><strong>2a. Date of Birth<br>2b. Age</strong></td>
-                    <td>
-                        <div class="flex-row">
-                            <div style="flex: 3;" class="input-subfield"><input type="date" name="h_dob" class="full-width"><span class="placeholder-text">(Day) (Month) (Year)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="number" name="h_age" class="full-width"><span class="placeholder-text">(Age)</span></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="flex-row">
-                            <div style="flex: 3;" class="input-subfield"><input type="date" name="w_dob" class="full-width"><span class="placeholder-text">(Day) (Month) (Year)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="number" name="w_age" class="full-width"><span class="placeholder-text">(Age)</span></div>
-                        </div>
+                        <input type="text" name="w_first_name" placeholder="First Name"><br>
+                        <input type="text" name="w_middle_name" placeholder="Middle Name"><br>
+                        <input type="text" name="w_last_name" placeholder="Last Name">
                     </td>
                 </tr>
 
-                <!-- 3. Place of Birth -->
                 <tr>
-                    <td><strong>3. Place of Birth</strong></td>
                     <td>
-                        <div class="flex-row">
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_birth_city" class="full-width"><span class="placeholder-text">(City/Municipality)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_birth_prov" class="full-width"><span class="placeholder-text">(Province)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_birth_country" class="full-width"><span class="placeholder-text">(Country)</span></div>
-                        </div>
+                        <b>2a. Date of Birth</b><br>
+                        <b>2b. Age</b>
                     </td>
                     <td>
-                        <div class="flex-row">
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_birth_city" class="full-width"><span class="placeholder-text">(City/Municipality)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_birth_prov" class="full-width"><span class="placeholder-text">(Province)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_birth_country" class="full-width"><span class="placeholder-text">(Country)</span></div>
-                        </div>
+                        Date: <input type="date" name="h_dob"><br>
+                        Age: <input type="number" name="h_age">
+                    </td>
+                    <td>
+                        Date: <input type="date" name="w_dob"><br>
+                        Age: <input type="number" name="w_age">
                     </td>
                 </tr>
 
-                <!-- 4. Sex / Citizenship -->
                 <tr>
-                    <td><strong>4a. Sex<br>4b. Citizenship</strong></td>
-                    <td><div class="input-subfield"><input type="text" name="h_citizenship" class="full-width"><span class="placeholder-text">(Citizenship)</span></div></td>
-                    <td><div class="input-subfield"><input type="text" name="w_citizenship" class="full-width"><span class="placeholder-text">(Citizenship)</span></div></td>
+                    <td><b>3. Place of Birth</b></td>
+                    <td><input type="text" name="h_pob" placeholder="City/Municipality, Province, Country"></td>
+                    <td><input type="text" name="w_pob" placeholder="City/Municipality, Province, Country"></td>
                 </tr>
 
-                <!-- 5. Residence -->
                 <tr>
-                    <td><strong>5. Residence</strong></td>
-                    <td><div class="input-subfield"><input type="text" name="h_residence" class="full-width"><span class="placeholder-text">(House No., St., Barangay, City/Municipality, Province, Country)</span></div></td>
-                    <td><div class="input-subfield"><input type="text" name="w_residence" class="full-width"><span class="placeholder-text">(House No., St., Barangay, City/Municipality, Province, Country)</span></div></td>
-                </tr>
-
-                <!-- 6. Religion -->
-                <tr>
-                    <td><strong>6. Religion / Religious Sect</strong></td>
-                    <td><input type="text" name="h_religion" class="full-width"></td>
-                    <td><input type="text" name="w_religion" class="full-width"></td>
-                </tr>
-
-                <!-- 7. Civil Status -->
-                <tr>
-                    <td><strong>7. Civil Status</strong></td>
-                    <td><input type="text" name="h_civil_status" class="full-width"></td>
-                    <td><input type="text" name="w_civil_status" class="full-width"></td>
-                </tr>
-
-                <!-- 8. Name of Father -->
-                <tr>
-                    <td><strong>8. Name of Father</strong></td>
                     <td>
-                        <div class="flex-row">
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_father_first" class="full-width"><span class="placeholder-text">(First)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_father_middle" class="full-width"><span class="placeholder-text">(Middle)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_father_last" class="full-width"><span class="placeholder-text">(Last)</span></div>
-                        </div>
+                        <b>4a. Sex</b><br>
+                        <b>4b. Citizenship</b>
                     </td>
                     <td>
-                        <div class="flex-row">
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_father_first" class="full-width"><span class="placeholder-text">(First)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_father_middle" class="full-width"><span class="placeholder-text">(Middle)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_father_last" class="full-width"><span class="placeholder-text">(Last)</span></div>
-                        </div>
+                        Sex: 
+                        <select name="h_sex">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select><br>
+                        Citizenship: <input type="text" name="h_citizenship">
+                    </td>
+                    <td>
+                        Sex: 
+                        <select name="w_sex">
+                            <option value="Male">Male</option>
+                            <option value="Female" selected>Female</option>
+                        </select><br>
+                        Citizenship: <input type="text" name="w_citizenship">
                     </td>
                 </tr>
 
-                <!-- 9. Citizenship of Father -->
                 <tr>
-                    <td><strong>9. Citizenship</strong></td>
-                    <td><input type="text" name="h_father_citizenship" class="full-width"></td>
-                    <td><input type="text" name="w_father_citizenship" class="full-width"></td>
+                    <td><b>5. Residence</b></td>
+                    <td><input type="text" name="h_residence"></td>
+                    <td><input type="text" name="w_residence"></td>
                 </tr>
 
-                <!-- 10. Maiden Name of Mother -->
                 <tr>
-                    <td><strong>10. Maiden Name of Mother</strong></td>
-                    <td>
-                        <div class="flex-row">
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_mother_first" class="full-width"><span class="placeholder-text">(First)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_mother_middle" class="full-width"><span class="placeholder-text">(Middle)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_mother_last" class="full-width"><span class="placeholder-text">(Last)</span></div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="flex-row">
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_mother_first" class="full-width"><span class="placeholder-text">(First)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_mother_middle" class="full-width"><span class="placeholder-text">(Middle)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_mother_last" class="full-width"><span class="placeholder-text">(Last)</span></div>
-                        </div>
-                    </td>
+                    <td><b>6. Religion/Religious Sect</b></td>
+                    <td><input type="text" name="h_religion"></td>
+                    <td><input type="text" name="w_religion"></td>
                 </tr>
 
-                <!-- 11. Citizenship of Mother -->
                 <tr>
-                    <td><strong>11. Citizenship</strong></td>
-                    <td><input type="text" name="h_mother_citizenship" class="full-width"></td>
-                    <td><input type="text" name="w_mother_citizenship" class="full-width"></td>
-                </tr>
-
-                <!-- 12. Person Who Gave Consent/Advice -->
-                <tr>
-                    <td><strong>12. Name of Person Who Gave Consent or Advice</strong></td>
+                    <td><b>7. Civil Status</b></td>
                     <td>
-                        <div class="flex-row">
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_consent_first" class="full-width"><span class="placeholder-text">(First)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_consent_middle" class="full-width"><span class="placeholder-text">(Middle)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="h_consent_last" class="full-width"><span class="placeholder-text">(Last)</span></div>
-                        </div>
+                        <select name="h_civil_status">
+                            <option value="Single">Single</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Divorced">Divorced/Annulled</option>
+                        </select>
                     </td>
                     <td>
-                        <div class="flex-row">
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_consent_first" class="full-width"><span class="placeholder-text">(First)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_consent_middle" class="full-width"><span class="placeholder-text">(Middle)</span></div>
-                            <div style="flex: 1;" class="input-subfield"><input type="text" name="w_consent_last" class="full-width"><span class="placeholder-text">(Last)</span></div>
-                        </div>
+                        <select name="w_civil_status">
+                            <option value="Single">Single</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Divorced">Divorced/Annulled</option>
+                        </select>
                     </td>
                 </tr>
 
-                <!-- 13. Relationship -->
                 <tr>
-                    <td><strong>13. Relationship</strong></td>
-                    <td><input type="text" name="h_consent_rel" class="full-width"></td>
-                    <td><input type="text" name="w_consent_rel" class="full-width"></td>
+                    <td><b>8. Name of Father</b></td>
+                    <td>
+                        <input type="text" name="h_father_first" placeholder="First Name"><br>
+                        <input type="text" name="h_father_middle" placeholder="Middle Name"><br>
+                        <input type="text" name="h_father_last" placeholder="Last Name">
+                    </td>
+                    <td>
+                        <input type="text" name="w_father_first" placeholder="First Name"><br>
+                        <input type="text" name="w_father_middle" placeholder="Middle Name"><br>
+                        <input type="text" name="w_father_last" placeholder="Last Name">
+                    </td>
                 </tr>
 
-                <!-- 14. Residence -->
                 <tr>
-                    <td><strong>14. Residence</strong></td>
-                    <td><div class="input-subfield"><input type="text" name="h_consent_res" class="full-width"><span class="placeholder-text">(House No., St., Barangay, City/Municipality, Province, Country)</span></div></td>
-                    <td><div class="input-subfield"><input type="text" name="w_consent_res" class="full-width"><span class="placeholder-text">(House No., St., Barangay, City/Municipality, Province, Country)</span></div></td>
+                    <td><b>9. Citizenship</b></td>
+                    <td><input type="text" name="h_father_citizenship"></td>
+                    <td><input type="text" name="w_father_citizenship"></td>
+                </tr>
+
+                <tr>
+                    <td><b>10. Maiden Name of Mother</b></td>
+                    <td>
+                        <input type="text" name="h_mother_first" placeholder="First Name"><br>
+                        <input type="text" name="h_mother_middle" placeholder="Middle Name"><br>
+                        <input type="text" name="h_mother_last" placeholder="Last Name">
+                    </td>
+                    <td>
+                        <input type="text" name="w_mother_first" placeholder="First Name"><br>
+                        <input type="text" name="w_mother_middle" placeholder="Middle Name"><br>
+                        <input type="text" name="w_mother_last" placeholder="Last Name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b>11. Citizenship</b></td>
+                    <td><input type="text" name="h_mother_citizenship"></td>
+                    <td><input type="text" name="w_mother_citizenship"></td>
+                </tr>
+
+                <tr>
+                    <td><b>12. Name of Person Who Gave Consent or Advice</b></td>
+                    <td>
+                        <input type="text" name="h_consent_first" placeholder="First Name"><br>
+                        <input type="text" name="h_consent_middle" placeholder="Middle Name"><br>
+                        <input type="text" name="h_consent_last" placeholder="Last Name">
+                    </td>
+                    <td>
+                        <input type="text" name="w_consent_first" placeholder="First Name"><br>
+                        <input type="text" name="w_consent_middle" placeholder="Middle Name"><br>
+                        <input type="text" name="w_consent_last" placeholder="Last Name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b>13. Relationship</b></td>
+                    <td><input type="text" name="h_consent_relation"></td>
+                    <td><input type="text" name="w_consent_relation"></td>
+                </tr>
+
+                <tr>
+                    <td><b>14. Residence</b></td>
+                    <td><input type="text" name="h_consent_residence"></td>
+                    <td><input type="text" name="w_consent_residence"></td>
+                </tr>
+
+                <tr>
+                    <td><b>15. Place of Marriage</b></td>
+                    <td colspan="2">
+                        <input type="text" name="place_of_marriage" placeholder="Church / Office / House"><br>
+                        <input type="text" name="marriage_city" placeholder="City/Municipality">
+                        <input type="text" name="marriage_province" placeholder="Province">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>16. Date of Marriage</b><br>
+                        <b>17. Time of Marriage</b>
+                    </td>
+                    <td colspan="2">
+                        Date: <input type="date" name="date_of_marriage">
+                        Time: <input type="time" name="time_of_marriage">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <b>18. CERTIFICATION OF THE CONTRACTING PARTIES:</b><br>
+                        THIS IS TO CERTIFY: That I, <input type="text" name="h_full_name_cert"> and I, <input type="text" name="w_full_name_cert">, both of legal age, of our own free will and accord, and in the presence of the person solemnizing this marriage and of the witnesses named below, take each other as husband and wife and certifying further that we:<br>
+                        <input type="radio" id="settlement_yes" name="settlement" value="entered">
+                        <label for="settlement_yes">have entered into a marriage settlement</label><br>
+                        <input type="radio" id="settlement_no" name="settlement" value="not_entered" checked>
+                        <label for="settlement_no">have not entered into a marriage settlement</label><br><br>
+                        IN WITNESS WHEREOF, we have signed/marked with our fingerprint this certificate in quadruplicate this <input type="text" name="cert_day" size="5"> day of <input type="text" name="cert_month_year">.<br><br>
+                        <table border="0" width="100%">
+                            <tr>
+                                <td align="center">
+                                    <input type="text" name="husband_signature_name"><br>
+                                    (Signature of Husband)
+                                </td>
+                                <td align="center">
+                                    <input type="text" name="wife_signature_name"><br>
+                                    (Signature of Wife)
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <b>19. CERTIFICATION OF THE SOLEMNIZING OFFICER:</b><br>
+                        THIS IS TO CERTIFY THAT BEFORE ME, on the date and place above-written, personally appeared the above-mentioned parties, with their mutual consent, lawfully joined together in marriage which was solemnized by me in the presence of the witnesses named below, all of legal age.<br>
+                        <b>I CERTIFY FURTHER THAT:</b><br>
+                        <input type="checkbox" name="lic_type_a"> a. Marriage License No. <input type="text" name="lic_no"> issued on <input type="date" name="lic_date"> at <input type="text" name="lic_place">, in favor of said parties, was exhibited to me.<br>
+                        <input type="checkbox" name="lic_type_b"> b. No marriage license was necessary, the marriage being solemnized under Art. <input type="text" name="art_no" size="5"> of Executive Order No. 209.<br>
+                        <input type="checkbox" name="lic_type_c"> c. The marriage was solemnized in accordance with the provisions of Presidential Decree No. 1083.<br><br>
+                        
+                        <table border="0" width="100%">
+                            <tr>
+                                <td>
+                                    <label>Officer Name:</label><br>
+                                    <input type="text" name="solemnizing_officer_name">
+                                </td>
+                                <td>
+                                    <label>Position / Designation:</label><br>
+                                    <input type="text" name="solemnizing_officer_position">
+                                </td>
+                                <td>
+                                    <label>Religion / Reg. No. & Expiration Date:</label><br>
+                                    <input type="text" name="solemnizing_officer_registry">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <b>20. WITNESSES (Print Name and Sign):</b><br>
+                        <table border="0" width="100%">
+                            <tr>
+                                <td>1. <input type="text" name="witness_1"></td>
+                                <td>2. <input type="text" name="witness_2"></td>
+                            </tr>
+                            <tr>
+                                <td>3. <input type="text" name="witness_3"></td>
+                                <td>4. <input type="text" name="witness_4"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="1">
+                        <b>21. RECEIVED BY:</b><br>
+                        Signature: <input type="text" name="rec_by_sig"><br>
+                        Name in Print: <input type="text" name="rec_by_name"><br>
+                        Title or Position: <input type="text" name="rec_by_title"><br>
+                        Date: <input type="date" name="rec_by_date">
+                    </td>
+                    <td colspan="2">
+                        <b>22. REGISTERED AT THE OFFICE OF THE CIVIL REGISTRAR:</b><br>
+                        Signature: <input type="text" name="reg_by_sig"><br>
+                        Name in Print: <input type="text" name="reg_by_name"><br>
+                        Title or Position: <input type="text" name="reg_by_title"><br>
+                        Date: <input type="date" name="reg_by_date">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <label for="remarks"><b>REMARKS / ANNOTATIONS:</b></label><br>
+                        <textarea id="remarks" name="remarks" rows="3" cols="60"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" align="center">
+                        <input type="submit" value="Submit Certificate of Marriage">
+                    </td>
                 </tr>
             </tbody>
         </table>
+        <table border="1" width="100%">
+            <tr>
+                <td align="center">
+                    <h3>AFFIDAVIT OF SOLEMNIZING OFFICER</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    I, <input type="text" name="affiant_name">, of legal age, solemnizing officer, with office address at <input type="text" name="affiant_address">, after having been sworn to in accordance with law, do hereby depose and say:<br><br>
 
-        <!-- 15, 16, 17. MARRIAGE DETAILS -->
-        <div class="section-box">
-            <div style="display: flex; gap: 10px;">
-                <div style="flex: 2;">
-                    <strong>15. Place of Marriage:</strong> 
-                    <input type="text" name="place_marriage" style="width: 80%;">
-                    <span class="placeholder-text">(Office of the/House of/Barangay of/Church of/Mosque of) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (City/Municipality) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Province)</span>
-                </div>
-            </div>
-            <div style="display: flex; gap: 10px; margin-top: 5px;">
-                <div style="flex: 1;"><strong>16. Date of Marriage:</strong> <input type="date" name="date_marriage"></div>
-                <div style="flex: 1;"><strong>17. Time of Marriage:</strong> <input type="time" name="time_marriage"></div>
-            </div>
-        </div>
+                    1. That I have solemnized the marriage between <input type="text" name="husband_name"> and <input type="text" name="wife_name">.<br><br>
 
-        <!-- 18. CERTIFICATION OF CONTRACTING PARTIES -->
-        <div class="section-box">
-            <strong>18. CERTIFICATION OF THE CONTRACTING PARTIES:</strong><br>
-            <span style="font-size: 10px; text-align: justify; display: block; margin: 3px 0; color:#333;">
-                THIS IS TO CERTIFY: That I, <input type="text" style="width: 180px;"> and I, <input type="text" style="width: 180px;">, both of legal age, of our own free will and accord, and in the presence of the person solemnizing this marriage and of the witnesses named below, take each other as husband and wife and certifying further that we: 
-                <input type="checkbox"> have entered / <input type="checkbox"> have not entered into a marriage settlement.
-            </span>
-            <div style="margin-top: 5px; text-align: center; color:#333;">
-                IN WITNESS WHEREOF, we have signed/marked with our fingerprint this certificate in quadruplicate this <input type="text" style="width: 40px;"> day of <input type="text" style="width: 100px;">.
-            </div>
+                    2. <input type="checkbox" name="cond_a"> a. That I have verified the qualifications of the contracting parties and have found no legal impediment for them to marry as required by Article 34 of the Family Code.<br>
+                    <input type="checkbox" name="cond_b"> b. That the marriage was performed in articulo mortis (at the point of death).<br>
+                    <input type="checkbox" name="cond_c"> c. That the contracting party/ies <input type="text" name="party_residence_name"> residing at the place of solemnization is/are unable to sign the Marriage Certificate personally due to physical disability.<br>
+                    <input type="checkbox" name="cond_d"> d. That the residence of either party is so remote that there is no means of transportation to obtain a marriage license.<br>
+                    <input type="checkbox" name="cond_e"> e. That the marriage was among Muslims or members of Ethnic Cultural Communities.<br><br>
 
-            <div style="display: flex; justify-content: space-around; margin-top: 15px;">
-                <div style="text-align: center;">
-                    <input type="text" style="width: 200px;"><br>
-                    <span class="placeholder-text">(Signature of Husband)</span>
-                </div>
-                <div style="text-align: center;">
-                    <input type="text" style="width: 200px;"><br>
-                    <span class="placeholder-text">(Signature of Wife)</span>
-                </div>
-            </div>
-        </div>
+                    3. That I took necessary steps to ascertain the ages and relationship of the contracting parties and that there was no legal impediment.<br><br>
 
-        <!-- 19. CERTIFICATION OF SOLEMNIZING OFFICER -->
-        <div class="section-box">
-            <strong>19. CERTIFICATION OF THE SOLEMNIZING OFFICER:</strong><br>
-            <span style="font-size: 10px; display: block; margin-bottom: 5px; color:#333;">
-                THIS IS TO CERTIFY: THAT BEFORE ME, on the date and place above-written, personally appeared the above-mentioned parties, with their mutual consent, lawfully joined together in marriage which was solemnized by me in the presence of the witnesses named below, all of legal age.
-            </span>
-            <strong>I CERTIFY FURTHER THAT:</strong>
-            <div class="checkbox-item">
-                <input type="checkbox" name="license_a">
-                <label>a. Marriage License No. <input type="text" style="width: 100px;"> issued on <input type="date"> at <input type="text" style="width: 120px;"> in favor of said parties, was exhibited to me.</label>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox" name="license_b">
-                <label>b. No marriage license was necessary, the marriage being solemnized under Art. <input type="text" style="width: 40px;"> of Executive Order No. 209.</label>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox" name="license_c">
-                <label>c. The marriage was solemnized in accordance with the provisions of Presidential Decree No. 1083.</label>
-            </div>
+                    4. That I am executing this affidavit to attest to the truthfulness of the foregoing statements for all legal intents and purposes.<br><br>
 
-            <div style="display: flex; justify-content: space-between; margin-top: 15px; text-align: center;">
-                <div style="flex: 1;">
-                    <input type="text" style="width: 90%;"><br>
-                    <span class="placeholder-text">(Signature Over Printed Name of Solemnizing Officer)</span>
-                </div>
-                <div style="flex: 1;">
-                    <input type="text" style="width: 90%;"><br>
-                    <span class="placeholder-text">(Position/Designation)</span>
-                </div>
-                <div style="flex: 1;">
-                    <input type="text" style="width: 90%;"><br>
-                    <span class="placeholder-text">(Religion/Religious Sect, Registry No. and Expiration Date)</span>
-                </div>
-            </div>
-        </div>
+                    IN WITNESS WHEREOF, I have affixed my signature this <input type="text" name="officer_sig_day" size="5"> day of <input type="text" name="officer_sig_month_year"> at <input type="text" name="officer_sig_place">.<br><br>
 
-        <!-- 20a. WITNESSES -->
-        <div class="section-box">
-            <strong>20a. WITNESSES</strong> <span class="placeholder-text" style="display:inline;">(Print Name and Sign):</span>
-            <div style="display: flex; justify-content: space-around; margin-top: 10px;">
-                <input type="text" style="width: 40%;">
-                <input type="text" style="width: 40%;">
-            </div>
-        </div>
+                    <table border="0" width="100%">
+                        <tr>
+                            <td align="center">
+                                <input type="text" name="solemnizing_officer_sig"><br>
+                                <b>Signature over Printed Name of Solemnizing Officer</b>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
 
-        <!-- 21 & 22. RECEIVED BY / REGISTERED -->
-        <div class="signatures-grid">
-            <div class="sig-col">
-                <h5>21. RECEIVED BY</h5>
-                <div class="input-subfield"><label>Signature:</label> <input type="text" style="width: 70%;"></div>
-                <div class="input-subfield"><label>Name in Print:</label> <input type="text" style="width: 60%;"></div>
-                <div class="input-subfield"><label>Title or Position:</label> <input type="text" style="width: 55%;"></div>
-                <div class="input-subfield"><label>Date:</label> <input type="date" style="width: 60%;"></div>
-            </div>
-            <div class="sig-col">
-                <h5>22. REGISTERED AT THE OFFICE OF THE CIVIL REGISTRAR</h5>
-                <div class="input-subfield"><label>Signature:</label> <input type="text" style="width: 70%;"></div>
-                <div class="input-subfield"><label>Name in Print:</label> <input type="text" style="width: 60%;"></div>
-                <div class="input-subfield"><label>Title or Position:</label> <input type="text" style="width: 55%;"></div>
-                <div class="input-subfield"><label>Date:</label> <input type="date" style="width: 60%;"></div>
-            </div>
-        </div>
+                    SUBSCRIBED AND SWORN to before me this <input type="text" name="sworn_day" size="5"> day of <input type="text" name="sworn_month_year"> at <input type="text" name="sworn_place">, affiant exhibiting his/her ID/CTC No. <input type="text" name="officer_id_no"> issued on <input type="date" name="officer_id_date">.<br><br>
 
-        <!-- REMARKS/ANNOTATIONS -->
-        <div class="remarks-box">
-            <strong>REMARKS/ANNOTATIONS (For LCRO/OCRG/Shari'a Circuit Registrar Use Only)</strong>
-        </div>
+                    <table border="0" width="100%">
+                        <tr>
+                            <td align="center">
+                                <input type="text" name="admin_officer_sig"><br>
+                                <b>Signature of Administering Officer</b>
+                            </td>
+                            <td align="center">
+                                <input type="text" name="admin_officer_position"><br>
+                                <b>Position/Title/Designation</b>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
 
-        <!-- OFFICE USE BOXES -->
-        <div class="office-use">
-            <strong>TO BE FILLED-UP AT THE OFFICE OF THE CIVIL REGISTRAR</strong>
-            <div class="office-boxes">
-                <div>4bH <div class="office-box"></div></div>
-                <div>4bW <div class="office-box"></div></div>
-                <div>5H <div class="office-box"></div></div>
-                <div>5W <div class="office-box"></div></div>
-                <div>6H <div class="office-box"></div></div>
-                <div>6W <div class="office-box"></div></div>
-                <div>7H <div class="office-box"></div></div>
-                <div>7W <div class="office-box"></div></div>
-            </div>
-        </div>
-    </div>
+        <br><br>
 
+        <table border="1" width="100%">
+            <tr>
+                <td align="center">
+                    <h3>AFFIDAVIT FOR DELAYED REGISTRATION OF MARRIAGE</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    I, <input type="text" name="delayed_affiant_name">, of legal age, <select name="delayed_affiant_status"><option value="Single">Single</option><option value="Married">Married</option><option value="Widowed">Widowed</option></select>, residing at <input type="text" name="delayed_affiant_address">, after being duly sworn in accordance with law, do hereby depose and state:<br><br>
 
-    <!-- PAGE 2: BACK PAGE (AFFIDAVITS) -->
-    <div class="page-title-indicator" style="margin-top: 20px;">PAGE 2 - AFFIDAVITS (BACK PAGE)</div>
+                    1. That I am the applicant for the delayed registration of:<br>
+                    <input type="radio" name="delayed_type" value="own"> my marriage with <input type="text" name="spouse_name"><br>
+                    <input type="radio" name="delayed_type" value="others"> the marriage between <input type="text" name="other_husband"> and <input type="text" name="other_wife"><br><br>
 
-    <div class="page-container">
-        <!-- 20b. WITNESSES CONTINUATION -->
-        <div class="section-box" style="border-top: 1px solid #d9534f;">
-            <strong>20b. WITNESSES</strong> <span class="placeholder-text" style="display:inline;">(Print Name and Sign):</span>
-            <div style="display: flex; justify-content: space-around; margin: 15px 0 10px 0;">
-                <input type="text" style="width: 22%;">
-                <input type="text" style="width: 22%;">
-                <input type="text" style="width: 22%;">
-                <input type="text" style="width: 22%;">
-            </div>
-        </div>
+                    2. That said marriage was solemnized on <input type="date" name="delayed_marriage_date"> at <input type="text" name="delayed_marriage_place"> by <input type="text" name="delayed_solemnizer"><br><br>
 
-        <!-- AFFIDAVIT OF SOLEMNIZING OFFICER -->
-        <div class="affidavit-title">AFFIDAVIT OF SOLEMNIZING OFFICER</div>
-        <div class="affidavit-text">
-            I, <input type="text" style="width: 250px;">, of legal age, Solemnizing Officer of <input type="text" style="width: 250px;"> with address at <input type="text" style="width: 300px;">, after having sworn to in accordance with law, do hereby depose and say:
-            <br><br>
-            1. That I have solemnized the marriage between <input type="text" style="width: 220px;"> and <input type="text" style="width: 220px;">;
-            <br>
-            2. 
-            <div class="checkbox-item">
-                <input type="checkbox">
-                <label>a. That I have ascertained the qualifications of the contracting parties and have found no legal impediment for them to marry as required by Article 34 of the Family Code;</label>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox">
-                <label>b. That this marriage was performed in articulo mortis or at the point of death;</label>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox">
-                <label>c. That the contracting party/ies <input type="text" style="width: 150px;"> and <input type="text" style="width: 150px;">, being at the point of death and physically unable to sign the foregoing certificate of marriage by signature or mark, one of the witnesses to the marriage; sign for him or her by writing the dying party's name and beneath it, the witness' own signature preceded by the preposition "By";</label>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox">
-                <label>d. That the residence of either party is so located that there is no means of transportation to enable concerned party/parties to appear personally before the civil registrar;</label>
-            </div>
-            <div class="checkbox-item">
-                <input type="checkbox">
-                <label>e. That the marriage was among Muslims or among members of the Ethnic Cultural Communities and that the marriage was solemnized in accordance with their customs and practices;</label>
-            </div>
-            3. That I took the necessary steps to ascertain the ages and relationship of the contracting parties and that neither of them are under any legal impediment to marry each other;
-            <br>
-            4. That I am executing this affidavit to attest to the truthfulness of the foregoing statements for all legal intents and purposes.
-        </div>
+                    3. That the marriage was solemnized:<br>
+                    <input type="checkbox" name="del_lic_yes"> a. With Marriage License No. <input type="text" name="del_lic_no"> issued on <input type="date" name="del_lic_date"> at <input type="text" name="del_lic_place"><br>
+                    <input type="checkbox" name="del_lic_no"> b. Under Article <input type="text" name="del_art_no" size="5"> of Executive Order No. 209 (Family Code)<br><br>
 
-        <div class="jurat-block">
-            In truth whereof, I have affixed my signature below this <input type="text" style="width: 40px;"> day of <input type="text" style="width: 100px;"> at <input type="text" style="width: 150px;">, Philippines.
-            
-            <div class="sig-line-container">
-                <div class="sig-line-item" style="margin-left: auto; max-width: 350px;">
-                    <input type="text" class="full-width"><br>
-                    <span>Signature Over Printed Name of the Solemnizing Officer</span>
-                </div>
-            </div>
+                    4. That the marriage was not registered on time due to <input type="text" name="delayed_reason" size="50"><br><br>
 
-            SUBSCRIBED AND SWORN to before me this <input type="text" style="width: 40px;"> day of <input type="text" style="width: 100px;"> at <input type="text" style="width: 150px;">, Philippines, affiant who exhibited to me his/her CTC/valid ID <input type="text" style="width: 120px;"> issued on <input type="date"> at <input type="text" style="width: 120px;">.
-        </div>
+                    5. That I am executing this affidavit to attest to the truth of the foregoing statements for legal purposes.<br><br>
 
-        <div class="sig-line-container">
-            <div class="sig-line-item">
-                <input type="text" class="full-width"><br>
-                <span>Signature of the Administering Officer</span><br>
-                <input type="text" class="full-width" style="margin-top: 5px;"><br>
-                <span>Name in Print</span>
-            </div>
-            <div class="sig-line-item">
-                <input type="text" class="full-width"><br>
-                <span>Position/Title/Designation</span><br>
-                <input type="text" class="full-width" style="margin-top: 5px;"><br>
-                <span>Address</span>
-            </div>
-        </div>
+                    IN WITNESS WHEREOF, I have hereunto set my hand this <input type="text" name="delayed_sig_day" size="5"> day of <input type="text" name="delayed_sig_month_year"> at <input type="text" name="delayed_sig_place">.<br><br>
 
-        <hr style="border: 1px solid #d9534f; margin: 20px 0;">
+                    <table border="0" width="100%">
+                        <tr>
+                            <td align="center">
+                                <input type="text" name="affiant_signature"><br>
+                                <b>Signature of Affiant</b>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
 
-        <!-- AFFIDAVIT FOR DELAYED REGISTRATION OF MARRIAGE -->
-        <div class="affidavit-title">AFFIDAVIT FOR DELAYED REGISTRATION OF MARRIAGE</div>
-        <div class="affidavit-text">
-            I, <input type="text" style="width: 250px;">, of legal age, single/married/divorced/widow/widower, with residence and postal address <input type="text" style="width: 350px;">, after having duly sworn in accordance with law do hereby depose and say:
-            <br><br>
-            1. That I am the applicant for the delayed registration of:
-            <div class="checkbox-item" style="margin-left: 15px;">
-                <input type="checkbox">
-                <label>my marriage with <input type="text" style="width: 180px;"> in <input type="text" style="width: 150px;"> on <input type="date">.</label>
-            </div>
-            <div class="checkbox-item" style="margin-left: 15px;">
-                <input type="checkbox">
-                <label>the marriage between <input type="text" style="width: 150px;"> and <input type="text" style="width: 150px;"> in <input type="text" style="width: 120px;"> on <input type="date">.</label>
-            </div>
-            2. That said marriage was solemnized by <input type="text" style="width: 220px;"> (Solemnizing Officer's name) under:
-            <div style="display: flex; gap: 15px; margin: 3px 0 3px 15px;">
-                <label><input type="checkbox"> a. religious ceremony</label>
-                <label><input type="checkbox"> b. civil ceremony</label>
-                <label><input type="checkbox"> c. Muslim rites</label>
-                <label><input type="checkbox"> d. tribal rites</label>
-            </div>
-            3. That the marriage was solemnized:
-            <div class="checkbox-item" style="margin-left: 15px;">
-                <input type="checkbox">
-                <label>a. with marriage license no. <input type="text" style="width: 100px;"> issued on <input type="date"> at <input type="text" style="width: 120px;">;</label>
-            </div>
-            <div class="checkbox-item" style="margin-left: 15px;">
-                <input type="checkbox">
-                <label>b. under Article <input type="text" style="width: 50px;"> (marriages of exceptional character);</label>
-            </div>
-            4. (If the applicant is either the wife or husband) That I am a citizen of <input type="text" style="width: 120px;"> and my spouse is a citizen of <input type="text" style="width: 120px;">;<br>
-            (If the applicant is other than the wife or husband) That the wife is a citizen of <input type="text" style="width: 120px;"> and the husband is a citizen of <input type="text" style="width: 120px;">;
-            <br>
-            5. That the reason for the delay in registering our/their marriage is <input type="text" style="width: 300px;">;
-            <br>
-            6. That I am executing this affidavit to attest to the truthfulness of the foregoing statements for all legal intents and purposes.
-        </div>
+                    SUBSCRIBED AND SWORN to before me this <input type="text" name="del_sworn_day" size="5"> day of <input type="text" name="del_sworn_month_year"> at <input type="text" name="del_sworn_place">, affiant exhibiting ID No. <input type="text" name="del_affiant_id">.<br><br>
 
-        <div class="jurat-block">
-            In truth whereof, I have affixed my signature below this <input type="text" style="width: 40px;"> day of <input type="text" style="width: 100px;"> at <input type="text" style="width: 150px;">, Philippines.
-
-            <div class="sig-line-container">
-                <div class="sig-line-item" style="margin-left: auto; max-width: 350px;">
-                    <input type="text" class="full-width"><br>
-                    <span>Signature Over Printed Name of Affiant</span>
-                </div>
-            </div>
-
-            SUBSCRIBED AND SWORN to before me this <input type="text" style="width: 40px;"> day of <input type="text" style="width: 100px;"> at <input type="text" style="width: 150px;">, Philippines, affiant who exhibited to me his/her CTC/valid ID <input type="text" style="width: 120px;"> issued on <input type="date"> at <input type="text" style="width: 120px;">.
-        </div>
-
-        <div class="sig-line-container">
-            <div class="sig-line-item">
-                <input type="text" class="full-width"><br>
-                <span>Signature of the Administering Officer</span><br>
-                <input type="text" class="full-width" style="margin-top: 5px;"><br>
-                <span>Name in Print</span>
-            </div>
-            <div class="sig-line-item">
-                <input type="text" class="full-width"><br>
-                <span>Position/Title/Designation</span><br>
-                <input type="text" class="full-width" style="margin-top: 5px;"><br>
-                <span>Address</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- SUBMIT BUTTON -->
-    <div class="btn-container">
-        <button type="submit" class="submit-btn">SUBMIT COMPLETE CERTIFICATE & AFFIDAVITS</button>
-    </div>
-
-</form>
+                    <table border="0" width="100%">
+                        <tr>
+                            <td align="center">
+                                <input type="text" name="del_admin_sig"><br>
+                                <b>Signature of Administering Officer</b>
+                            </td>
+                            <td align="center">
+                                <input type="text" name="del_admin_title"><br>
+                                <b>Position / Title / Designation</b>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <br>
+                    <input type="submit" value="Submit Affidavits">
+                    <br><br>
+                </td>
+            </tr>
+        </table>
+    </form>
 
 </body>
 </html>
