@@ -27,58 +27,32 @@
         </form>
     </table>    
     <?php
-    $conn = mysqli_connect("localhost", "root", "", "jpcs");
-    if(!$conn)
-    {
-            die("Connection failed: " . mysqli_connect_error());
-
-    }
-    else
-    {
-                echo "Connected successfully";
-    }
-
-    if(isset($_POST['submit']))
-        {
-            $code = $_POST['code'];
-            $description = $_POST['description'];
-            $address = $_POST['address'];
-
-            $sql_insert = "INSERT INTO school(code,description,address) 
-                            VALUES ('$code', '$description', '$address')";
-
-            if(mysqli_query($conn, $sql_insert))
-                {
-                    echo "New record created susccessfully!";
-                }
-        }
-
-
-    $sql ="SELECT * FROM school";
+    $sql = "SELECT * FROM school";
     $result = mysqli_query($conn, $sql);
-    if(mysqli_num_rows($result) > 0)
-        {
-            echo "<table border = '1'>";
+    if (mysqli_num_rows($result) > 0) {
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>ID</th>";
+        echo "<th>Code</th>";
+        echo "<th>Description</th>";
+        echo "<th>Address</th>";
+        echo "<th>Action</th>";
+        echo "</tr>";
+        while($row = mysqli_fetch_object($result)) {
             echo "<tr>";
-            echo "<th>ID</th>";
-            echo "<th>Code</th>";
-            echo "<th>Description</th>";
-            echo "<th>Address</th>";
+            echo "<td>" . $row->id . "</td>";
+            echo "<td>" . $row->school_code . "</td>";
+            echo "<td>" . $row->school_description . "</td>";
+            echo "<td>" . $row->school_address . "</td>";
+            echo "<td><a href='process.php?action=del&id=" . $row->id . "'
+                    onclick='return confirm(\"Are you sure you want to delete this record?\");'>
+                    delete</a></td>";
             echo "</tr>";
-            while($row = mysqli_fetch_assoc($result))
-                {
-                    echo "<tr>";
-                    echo "<td>". $row["id"] . "</td>";
-                    echo "<td>". $row["code"] . "</td>";
-                    echo "<td>". $row["description"] . "</td>";
-                    echo "<td>". $row["address"] . "</td>";
-                }
-                echo"</table>";
         }
-        else
-            {
-                echo "0 results";
-            }
-    ?>
+        echo "</table>";
+    } else {
+        echo "0 results";
+    }
+?>
 </body>
 </html>
